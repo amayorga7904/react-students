@@ -64,16 +64,15 @@ const studentList = [
 ]
 
 function App() {
-  const [students, setStudents] = useState(studentList)
+  const [students, setStudents] = useState(studentList);
+  const [showStudents, setShowStudents] = useState(true);
 
   return (
     <>
       <h1>Student List</h1>
-      {students.map((student, idx) => (
-        <Student key={idx} student={student} />
-      ))}
+      {showStudents && <Student students={students} />}
     </>
-  )
+  );
 }
 
 export default App
